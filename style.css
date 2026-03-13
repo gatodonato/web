@@ -559,9 +559,9 @@ footer{
 
     .hero-cat{
         height: auto;
-        width: 155vw;
+        width: 175vw;
         max-width: none;
-        bottom: 4vh;
+        bottom: 11vh;
     }
 
     .btn-buy-now{
