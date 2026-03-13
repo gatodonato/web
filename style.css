@@ -551,17 +551,31 @@ footer{
 }
 
 @media (max-width:480px){
+    /* Zwiększono napis GATO - szerszy obszar i wymuszone powiększenie przez skale SVG */
     .curved-title{
-        width: 90vw;
-        max-width: 400px;
-        margin-top: 5vh;
+        width: 105vw;
+        max-width: 500px;
+        margin-top: 3vh;
+        transform: scale(1.1);
     }
 
+    /* Znacznie powiększono kota oraz drastycznie wyciągnięto go w górę */
     .hero-cat{
         height: auto;
-        width: 175vw;
+        width: 220vw;
         max-width: none;
-        bottom: 11vh;
+        bottom: 18vh;
+    }
+
+    /* Zmniejszono szerokość paska marquee (i sam tekst w środku) aby nie krzyczał */
+    .marquee-strip{
+        padding:0.2rem 0;
+        border-top:2px solid var(--brown);
+        border-bottom:2px solid var(--brown);
+        transform:translateY(-50%) rotate(-1.5deg) scale(0.9) scaleX(1.04);
+    }
+    .marquee-track span{
+        font-size: 1rem;
     }
 
     .btn-buy-now{
