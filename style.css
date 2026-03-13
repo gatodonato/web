@@ -564,15 +564,18 @@ footer{
         height: auto;
         width: 220vw;
         max-width: none;
-        bottom: 18vh;
+        bottom: 12vh; /* Kotek lekko niżej (był 18vh) */
     }
 
     /* Zmniejszono szerokość paska marquee (i sam tekst w środku) aby nie krzyczał */
+    /* Poszerzono go sztucznie aby po obróceniu brzegi dotykały boku ekranu */
     .marquee-strip{
+        width: 110vw;
+        left: -5vw;
         padding:0.2rem 0;
         border-top:2px solid var(--brown);
         border-bottom:2px solid var(--brown);
-        transform:translateY(-50%) rotate(-1.5deg) scale(0.9) scaleX(1.04);
+        transform:translateY(-50%) rotate(-1.5deg) scale(0.9);
     }
     .marquee-track span{
         font-size: 1rem;
@@ -583,7 +586,40 @@ footer{
         padding:0.7rem 1.8rem;
     }
 
-    .cartoon-title{font-size:1.6rem;margin-bottom:1.2rem;}
+    .cartoon-title{
+        font-size:1.6rem;
+        margin-top:2rem; /* Napis "About Gato" niżej */
+        margin-bottom:1.2rem;
+    }
+    
+    /* Karuzela TikTok Videos na mobile */
+    .tiktok-grid{
+        overflow-x: auto;
+        overflow-y: hidden;
+        flex-wrap: nowrap;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        /* Wyśrodkowanie przy 3 elementach */
+        width: 100vw;
+        margin-left: -5vw; /* wychodzi poza padding sekcji */
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+    
+    .tiktok-grid::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .tiktok-video{
+        flex:0 0 75vw;
+        max-width:75vw;
+        scroll-snap-align: center;
+        transform: none !important; /* usuwamy rotacje by nie psuły karuzeli */
+        margin-right: 1rem;
+    }
 
     .about-text{
         padding:1.2rem 1rem;
