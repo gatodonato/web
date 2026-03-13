@@ -551,13 +551,17 @@ footer{
 }
 
 @media (max-width:480px){
-    .curved-title{width:min(340px, 95vw);}
+    .curved-title{
+        width: 90vw;
+        max-width: 400px;
+        margin-top: 5vh;
+    }
 
     .hero-cat{
         height: auto;
-        width: 180vw;
+        width: 155vw;
         max-width: none;
-        bottom: -3vh;
+        bottom: 4vh;
     }
 
     .btn-buy-now{
