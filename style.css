@@ -564,21 +564,21 @@ footer{
         height: auto;
         width: 220vw;
         max-width: none;
-        bottom: 12vh; /* Kotek lekko niżej (był 18vh) */
+        bottom: 9vh; /* Kotek jeszcze lekko niżej (był 12vh) */
     }
 
-    /* Zmniejszono szerokość paska marquee (i sam tekst w środku) aby nie krzyczał */
-    /* Poszerzono go sztucznie aby po obróceniu brzegi dotykały boku ekranu */
+    /* Zmniejszono grubość paska marquee i lekko sam tekst */
+    /* Szerokość rozciągnięta w cholere, by ukryć boczne braki tła pod wpływem skali/obrotu */
     .marquee-strip{
-        width: 110vw;
-        left: -5vw;
+        width: 130vw;
+        left: -15vw;
         padding:0.2rem 0;
         border-top:2px solid var(--brown);
         border-bottom:2px solid var(--brown);
-        transform:translateY(-50%) rotate(-1.5deg) scale(0.9);
+        transform:translateY(-50%) rotate(-1.5deg); /* usunieto scale() by nie pomniejszac szerokosci paska w kontenerze, zmniejszamy tekst zeby nie krzyczal */
     }
     .marquee-track span{
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .btn-buy-now{

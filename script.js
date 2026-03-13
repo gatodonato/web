@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
     // ===== Intersection Observer for fade-in =====
     const observer = new IntersectionObserver((entries) => {
@@ -63,5 +63,21 @@
         // Try to play immediately
         video.play().catch(() => {});
     });
+
+    // ===== Set Default Center Video for Mobile Carousel =====
+    const tiktokGrid = document.querySelector('.tiktok-grid');
+    const tiktokVideos = document.querySelectorAll('.tiktok-video');
+    if (tiktokGrid && tiktokVideos.length >= 3) {
+        // Obliczamy ile musimy przewinąć żeby drugi (środkowy) element był w centrum
+        // Ponieważ jest to responsywne, odpalamy to asynchronicznie kiedy strona sie wyrysuje
+        setTimeout(() => {
+            if (window.innerWidth <= 480) {
+                // Skrolujemy do drugiego video pomniejszonego o offset środkujący
+                const targetVideo = tiktokVideos[1];
+                const scrollLeftPos = targetVideo.offsetLeft - (window.innerWidth / 2) + (targetVideo.offsetWidth / 2);
+                tiktokGrid.scrollTo({ left: scrollLeftPos, behavior: 'instant' });
+            }
+        }, 100); // 100ms opóznienia zeby upewnic się, ze flex-layout na mobile zaskoczył
+    }
 
 });
