@@ -513,6 +513,11 @@ footer{
 @media (max-width:768px){
     .curved-title{width:min(520px, 92vw);}
 
+    .hero-cat{
+        max-width: 130vw;
+        height: 85vh;
+    }
+
     .btn-buy-now{
         font-size:1.1rem;
         padding:0.8rem 2.2rem;
@@ -547,6 +552,13 @@ footer{
 
 @media (max-width:480px){
     .curved-title{width:min(340px, 95vw);}
+
+    .hero-cat{
+        height: auto;
+        width: 180vw;
+        max-width: none;
+        bottom: -3vh;
+    }
 
     .btn-buy-now{
         font-size:0.95rem;
