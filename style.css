@@ -36,8 +36,21 @@ body{
     color:var(--text);
     line-height:1.7;
     overflow-x:hidden;
-    /* Nasze własne tło - wyciągane pod notch na mobile */
-    background: #8dbdec url('background%20gato.jpg') top center / cover no-repeat;
+    background: 
+        linear-gradient(
+            180deg,
+            rgba(58,130,40,0) 0%,
+            rgba(50,120,35,0.15) 30%,
+            rgba(40,100,28,0.25) 70%,
+            rgba(35,90,22,0.35) 100%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.03) 0%,
+            rgba(255,255,255,0.04) 50%,
+            rgba(0,0,0,0.03) 100%
+        ),
+        #3a8228;
     min-height:100vh;
 }
 
@@ -550,9 +563,9 @@ footer{
     /* Znacznie powiększono kota oraz drastycznie wyciągnięto go w górę */
     .hero-cat{
         height: auto;
-        width: 280vw; /* Zwiększono gigantycznie dla nowszych/większych iPhoneów */
+        width: 280vw;
         max-width: none;
-        bottom: 11vh; /* Ustawienie by duży kot miał miejsce */
+        bottom: 9vh; /* Delikatnie niżej niż 11vh, ale nie za bardzo */
     }
 
     /* Zmniejszono grubość paska marquee i lekko sam tekst */
