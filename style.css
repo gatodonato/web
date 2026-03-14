@@ -649,3 +649,18 @@ footer{
         width: 240vw; /* Zablokowanie starej szerokości by powiększony kot go nie zniszczył */
     }
 }
+
+/* =============== TELEGRAM WEBVIEW FIX =============== */
+/* TG browser źle liczy 100vh (wlicza swój pasek) i powoduje
+   "skakanie" tła oraz kotka startującego pod tytułem $GATO.
+   Klasa .tg-browser jest dodawana przez script.js tylko w TG. */
+.tg-browser #hero{
+    background-attachment: scroll !important;
+    -webkit-overflow-scrolling: auto;
+}
+.tg-browser .hero-cat{
+    /* Wymuszamy pozycjonowanie fixed-like żeby kot nie skakał przy scrollu TG */
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}

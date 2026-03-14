@@ -1,4 +1,28 @@
+// ===== Telegram WebView Detection =====
+(function(){
+    var ua = navigator.userAgent || '';
+    if (/Telegram/i.test(ua) || /TelegramBot/i.test(ua) || window.TelegramWebviewProxy) {
+        document.documentElement.classList.add('tg-browser');
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+
+    // ===== Telegram Browser Fix =====
+    // TG WebView oblicza 100vh źle (wlicza pasek adresu).
+    // Wymuszamy prawidłową wysokość hero i zapobiegamy "skakaniu" tła.
+    if (document.documentElement.classList.contains('tg-browser')) {
+        const hero = document.getElementById('hero');
+        if (hero) {
+            function fixTgHeight() {
+                hero.style.height = window.innerHeight + 'px';
+                hero.style.minHeight = window.innerHeight + 'px';
+            }
+            fixTgHeight();
+            window.addEventListener('resize', fixTgHeight);
+        }
+    }
+
 
     // ===== Intersection Observer for fade-in =====
     const observer = new IntersectionObserver((entries) => {
