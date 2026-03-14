@@ -36,21 +36,8 @@ body{
     color:var(--text);
     line-height:1.7;
     overflow-x:hidden;
-    background: 
-        linear-gradient(
-            180deg,
-            rgba(58,130,40,0) 0%,
-            rgba(50,120,35,0.15) 30%,
-            rgba(40,100,28,0.25) 70%,
-            rgba(35,90,22,0.35) 100%
-        ),
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,0.03) 0%,
-            rgba(255,255,255,0.04) 50%,
-            rgba(0,0,0,0.03) 100%
-        ),
-        #3a8228;
+    /* Nasze własne tło - wyciągane pod notch na mobile */
+    background: #8dbdec url('background%20gato.jpg') top center / cover no-repeat;
     min-height:100vh;
 }
 
@@ -553,19 +540,19 @@ footer{
 @media (max-width:480px){
     /* Zwiększono napis GATO - szerszy obszar i wymuszone powiększenie przez skale SVG */
     .curved-title{
-        width: 140vw;
-        max-width: 700px;
+        width: 160vw;
+        max-width: 800px;
         margin-top: 3vh;
-        transform: scale(1.6);
+        transform: scale(1.8);
         transform-origin: top center;
     }
 
     /* Znacznie powiększono kota oraz drastycznie wyciągnięto go w górę */
     .hero-cat{
         height: auto;
-        width: 220vw;
+        width: 280vw; /* Zwiększono gigantycznie dla nowszych/większych iPhoneów */
         max-width: none;
-        bottom: 11vh; /* Kotek lekko wyżej, ucieka z krawędzi przycisku */
+        bottom: 11vh; /* Ustawienie by duży kot miał miejsce */
     }
 
     /* Zmniejszono grubość paska marquee i lekko sam tekst */
@@ -634,4 +621,18 @@ footer{
     .token-box{width:85px;padding:0.8rem 0.5rem;}
     .token-value{font-size:0.85rem;}
     .token-label{font-size:0.45rem;}
+}
+
+/* Specjalny FIX dla iPhone SE oraz małych ekranów (krótkich na wysokość) */
+@media (max-height:670px){
+    .curved-title{
+        width: 140vw;
+        max-width: 700px;
+        transform: scale(1.6);
+        transform-origin: top center;
+    }
+    .hero-cat{
+        bottom: 10vh; /* Delikatne obniżenie względem bazowych 14vh */
+        width: 240vw; /* Zablokowanie starej szerokości by powiększony kot go nie zniszczył */
+    }
 }
