@@ -553,10 +553,10 @@ footer{
 @media (max-width:480px){
     /* Zwiększono napis GATO - szerszy obszar i wymuszone powiększenie przez skale SVG */
     .curved-title{
-        width: 105vw;
+        width: 110vw;
         max-width: 500px;
-        margin-top: 3vh;
-        transform: scale(1.1);
+        margin-top: 4vh;
+        transform: scale(1.25);
     }
 
     /* Znacznie powiększono kota oraz drastycznie wyciągnięto go w górę */
