@@ -664,5 +664,5 @@ footer{
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     width: 200vw !important;
-    bottom: -2vh !important;
+    bottom: 3vh !important;
 }
