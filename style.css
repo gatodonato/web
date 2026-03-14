@@ -157,9 +157,9 @@ main{width:100%;overflow-x:hidden;}
     width:100%;
     overflow:hidden;
     background:linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-    border-top:3px solid var(--brown);
-    border-bottom:3px solid var(--brown);
-    padding:0.4rem 0;
+    border-top:2px solid var(--brown);
+    border-bottom:2px solid var(--brown);
+    padding:0.15rem 0;
     position:absolute;
     top:0; /* Wyrównany do linii styku tła */
     left:0;
@@ -553,10 +553,11 @@ footer{
 @media (max-width:480px){
     /* Zwiększono napis GATO - szerszy obszar i wymuszone powiększenie przez skale SVG */
     .curved-title{
-        width: 120vw;
-        max-width: 600px;
-        margin-top: 5vh;
-        transform: scale(1.4);
+        width: 140vw;
+        max-width: 700px;
+        margin-top: 3vh;
+        transform: scale(1.6);
+        transform-origin: top center;
     }
 
     /* Znacznie powiększono kota oraz drastycznie wyciągnięto go w górę */
@@ -564,7 +565,7 @@ footer{
         height: auto;
         width: 220vw;
         max-width: none;
-        bottom: 9vh; /* Kotek jeszcze lekko niżej (był 12vh) */
+        bottom: 11vh; /* Kotek lekko wyżej, ucieka z krawędzi przycisku */
     }
 
     /* Zmniejszono grubość paska marquee i lekko sam tekst */
