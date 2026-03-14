@@ -659,8 +659,10 @@ footer{
     -webkit-overflow-scrolling: auto;
 }
 .tg-browser .hero-cat{
-    /* Wymuszamy pozycjonowanie fixed-like żeby kot nie skakał przy scrollu TG */
+    /* Zmniejszamy i obniżamy kota tylko w TG */
     will-change: transform;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    width: 200vw !important;
+    bottom: -2vh !important;
 }
